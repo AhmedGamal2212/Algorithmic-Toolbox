@@ -23,6 +23,8 @@ struct item{
 	}
 };
 
+// sorting according to the value per weight unit
+
 bool by(item a, item b){
 	return a.value / a.weight > b.value / b.weight;
 }
@@ -36,6 +38,10 @@ void solve(){
 		cin >> i.value >> i.weight;
 	}
 	sort(all(v), by);
+	
+	/* we can iterate over the array we have from the largest value per unit to the smallest
+	 * and take as much loot as we can before moving to the next item
+	 */
 	
 	double sum = 0;
 	for(auto& i : v){

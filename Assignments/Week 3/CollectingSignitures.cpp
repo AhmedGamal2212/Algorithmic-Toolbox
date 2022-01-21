@@ -38,8 +38,13 @@ void solve(){
 	sort(all(v), by);
 	int start = imin, end = imax;
 	
+	// merging as many intervals as we can to find a point that belongs to them all
+	
 	for(auto& i : v){
 		if(i.start > end){
+			
+			// when we find an interval that we can't merge to our larger interval, we start a new large interval and store the point that groups all the intervals we have
+			
 			ans.emplace_back(start);
 			start = i.start, end = i.end;
 		}

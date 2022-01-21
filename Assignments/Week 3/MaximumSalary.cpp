@@ -13,6 +13,8 @@ using namespace std;
 #define nl '\n'
 #define modulo(a, b, mod) ((((a) % mod) * ((b) % mod)) % mod)
 
+// making the two string-numbers equal in sizes circularly to compare them easy
+
 void complete(string& s, int& size){
 	string tmp(s);
 	for(int i = 0; i < size / tmp.size(); i++)
@@ -20,6 +22,7 @@ void complete(string& s, int& size){
 	s += tmp.substr(0, size % tmp.size());
 }
 
+// sorting the numbers according to the first index that has two unequal digits 
 
 bool by(string& a, string& b){
 	int mustBe = max(a.size(), b.size());
@@ -43,6 +46,8 @@ void solve(){
 	
 	
 	sort(all(v), by);
+	
+	// the array is ready to combine its numbers forming the answer
 	
 	for(auto& i : v){
 		cout << i;

@@ -19,16 +19,23 @@ void solve(){
 	vector<int> v(n);
 	for(auto& i : v) cin >> i;
 	
+	// add our targeted city's distance to the stations we have
 	v.emplace_back(d);
 	
 	int curr = 0, cnt = 0;
 	bool noWay = false;
 	
 	for(int i = 0; i < n; i++){
+		
+		/* if a distance between two stations is larger than the distance the full-tank car
+		 * can go, then there's no way to reach our goal
+		 */
+		
 		if(v[i + 1] - v[i] > m){
 			noWay = true;
 			break;
 		}
+		// if we can't reach the next station, then we better fuel the car here
 		
 		if(v[i + 1] - curr > m){
 			curr = v[i];

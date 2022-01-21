@@ -14,15 +14,22 @@ using namespace std;
 #define modulo(a, b, mod) ((((a) % mod) * ((b) % mod)) % mod)
 
 void solve(){
+	
 	int n; cin >> n;
 	vector<ll> a(n), b(n);
 	for(auto& i : a) cin >> i;
 	for(auto& i : b) cin >> i;
 	
+	/* the maximum revenue of the advertisements is where we put the maximum paying ad in the
+	 * maximum clicks per day slot
+	 */
+	 
 	sort(all(a)), sort(all(b));
 	
 	ll sum = 0;
-	for(int i = 0; i < n; i++) sum += a[i] * b[i];
+	for(int i = 0; i < n; i++) 
+		sum += a[i] * b[i];
+	
 	cout << sum;
 }
 

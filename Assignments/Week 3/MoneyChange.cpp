@@ -1,3 +1,10 @@
+/*
+ * we have an array of coins with values 10, 5, and 1.
+ * given a number representing a price, print the minimum number of coins that can
+ * represent that price
+ * 
+ * */
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -16,6 +23,13 @@ using namespace std;
 void solve(){
 	int n; cin >> n;
 	int arr[3] = {10, 5, 1};
+	
+	/*
+	 * we can iterate over our sorted array (descending) 
+	 * of coins and take as many coins as we need
+	 * 
+	 */
+	 
 	int sum = 0;
 	for(auto& i : arr){
 		while(n / i){
